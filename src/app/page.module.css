@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('/font/Cocogoose.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -10,7 +17,7 @@
   align-items: center;
   justify-items: center;
   min-height: 100svh;
-  font-family: var(--font-geist-sans);
+  font-family: "MyFont";
   color:white
 }
 
@@ -61,11 +68,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
   padding:1em 3em;
   
 }
 
+
+.menuContainer{
+  display: flex;
+  align-items:center;
+  gap:.2em;
+  font-family: var(--font-geist-sans);
+}
+
+.bugattiTextContainer{
+  font-family: MyFont;
+}
 .discoverMoreContainer{
   margin: 0 10em;
 }
@@ -158,13 +175,18 @@
   margin-bottom: 10em;
 }
 
+.motto{
+  display: flex;
+  width: 90%;
+}
+
 .row {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3em;
   width: 90vw;
-  margin-top: 5rem;
+  margin-top: 3rem;
   transition: all 0.5s ease;
 }
 

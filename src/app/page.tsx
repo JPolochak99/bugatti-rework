@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import CarModelViewer from "../../components/carModel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import SideMenu from "../../components/menu/sideMenu";
 
 /* import all the icons in Free Solid, Free Regular, and Brands styles */
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -24,6 +25,8 @@ import { useRef } from 'react';
 
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -33,19 +36,22 @@ export default function Home() {
 
           <div className={styles.navBar}>
 
-            <div className={styles.menuContainer}>
-              <h1>Menu</h1>
+            <div className={styles.menuContainer} onClick={() => setMenuOpen(true)}>
+              <FontAwesomeIcon icon={["fas", "bars"]} />
+              <h4>Menu</h4>
             </div>
 
             <div className={styles.bugattiTextContainer}>
-              <h1>Bugatti</h1>
+              <h1>BUGATTI</h1>
             </div>
 
             <div className={styles.profileConatiner}>
-              <h1>Profile</h1>
+              <FontAwesomeIcon icon={["far", "user"]} />
             </div>
 
           </div>
+
+          <SideMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
           <div className={styles.discoverMoreContainer}>
             <div className={styles.discoverMoreModel}>
@@ -112,9 +118,11 @@ export default function Home() {
 
         </div>
 
-      <h1>If Comparable, It Is No Longer Bugatti</h1>
+        <div className={styles.motto}>
+          <h1>If Comparable, It Is No Longer BUGATTI</h1>
+        </div>
 
-      <div className={styles.moreCarsContainer}>
+      <div className={styles.moreCarsContainer}>    
         <div className={styles.row}>
           <div className={`${styles.moreCarsCard} ${styles.tourbillon}`}>
             <div className={styles.cardVideo}>
